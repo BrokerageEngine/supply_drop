@@ -58,7 +58,7 @@ module SupplyDrop
           when :languages               then nil # not applicable
           when :logger                  then nil # not applicable
           when :paranoid                then opt('StrictHostKeyChecking', value ? 'yes' : 'no')
-          when :verify_host_key		then opt('StrictHostKeyChecking', value ? 'yes' : 'no')
+	  when :verify_host_key		then opt('StrictHostKeyChecking', value.to_s == "never" ? 'no' : 'yes')
           when :passphrase              then nil # not supported
           when :password                then nil # not supported
           when :port                    then "-p #{value.to_i}"
