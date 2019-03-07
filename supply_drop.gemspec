@@ -1,4 +1,3 @@
-require 'rake'
 
 Gem::Specification.new do |s|
   s.name = "supply_drop"
@@ -9,6 +8,6 @@ Gem::Specification.new do |s|
   s.email = ["tony.pitluga@gmail.com", "paul.t.hinze@gmail.com"]
   s.homepage = "http://github.com/pitluga/supply_drop"
   s.license = "MIT"
-  s.files = FileList["README.md", "Rakefile", "lib/**/*.rb"]
+  s.files = ["README.md", "Rakefile"].concat(Dir["lib/**/*.rb"])
   s.add_dependency('capistrano', '>= 2.5.21')
 end
